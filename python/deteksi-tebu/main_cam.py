@@ -7,7 +7,7 @@ import cv2
 from ultralytics import YOLO
 
 # Muat model
-model = YOLO('python/project/deteksi-tebu/best_deteksi_tebu.pt')
+model = YOLO('python/project/deteksi-tebu/runs/detect/train2/weights/best.pt')
 
 # Prediksi dengan membuka kamera
 
