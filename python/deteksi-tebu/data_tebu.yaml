@@ -1,0 +1,12 @@
+path : D:\Pemrograman\python\project\deteksi-tebu\data
+train : images\train
+val : images\test
+
+# Classes
+
+names:
+  0 : sehat
+  1 : mosaik
+  2 : merah_busuk
+  3 : karat
+  4 : kuning
