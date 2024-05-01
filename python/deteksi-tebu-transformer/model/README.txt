@@ -1,0 +1,1 @@
+karena batas file upload github, modelnya tidak bisa di upload :(
