@@ -1,17 +1,43 @@
-# Halo! selamat datang kamu yang kepo di repo belajarku!
+# 👋 Halo! Selamat datang di Repo Belajarku
 
-sesuai nama reponya, ya ini repo buat aku belajar gitu
-apapun itu yang aku pelajarin ya, mungkin kebanyakan Python
-tapi aku juga pengen belajar website sih! Liat aja nanti ya!
+Terima kasih sudah mampir!  
+Di repo ini aku akan mencatat perjalanan belajarku tentang berbagai topik.
 
-## Progres Belajar
-1. Python untuk Machine Learning / Deep Learning (16 - 01 - 2024)
+Berawal dari **Python**, aku tertarik ke bidang lain termasuk **web development**, bisa juga nanti aku belajar yang lain 😋
 
-# Halo! Welcome to those of you who are curious about my learning repo!
- 
-As the name of the repo, yes, this is a repo for me to learn from
-whatever it is, what i'm studying is probably mostly Python
-but i also want to learn about websites! Just look at it later okay!
+---
 
-## Learning Progress
-1. Python for Machine Learning / Deep Learning (16 - 01 - 2024)
+## 📚 Catatan Awal Pembelajaran
+
+1. 🐍 **Python untuk Machine Learning & Deep Learning** — 16 Januari 2024
+2. 💻 **Menggunakan GitHub untuk menyimpan semua file coding & belajar web development** — 30 Mei 2025
+
+---
+
+# 👋 Allo! Welcome to My Learning Repo
+
+Thank you for stopping by!
+In this repo, I’ll be documenting my learning journey across various topics.
+
+Starting with **Python**, I’m also interested in exploring other fields including **web development**, and maybe I’ll learn other things later too 😋
+
+---
+
+## 📚 Initial Learning Notes
+
+1. 🐍 **Python for Machine Learning & Deep Learning** — January 16, 2024
+2. 💻 **Using GitHub to store all coding files & learn web development** — May 30, 2025
+
+---
+
+## 🚀 Let's Connect!
+
+Kalau kamu punya tips, trik, atau sumber belajar menarik, jangan ragu buat bantu!
+Aku senang banget kalau bisa belajar bareng dan saling support.
+
+If you have any tips, tricks, or interesting learning resources, feel free to help out!
+I’d be really happy to learn together and support each other.
+
+---
+
+_Happy learning & keep coding!_ ✨
