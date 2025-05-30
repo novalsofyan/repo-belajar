@@ -1,0 +1,28 @@
+.navigasi {
+  background-color: lightgreen;
+  color: red;
+  text-decoration: none;
+}
+
+.navigasi * {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.navigasi a:hover {
+  font-size: 24px;
+}
+
+.navigasi a:visited {
+  color: purple;
+}
+
+.main {
+  background-color: #111823;
+  color: white;
+}
+
+.main .span_1 {
+  background-color: yellow;
+  color: black;
+}

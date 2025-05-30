@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  background-image: url(aizen.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}

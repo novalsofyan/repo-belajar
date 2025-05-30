@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 30px;
+}
+
+a:visited {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+li:nth-child(5n-4) a {
+  color: cyan;
+}
