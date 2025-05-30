@@ -1,0 +1,22 @@
+/* padding tidak bisa auto dan menambah ukuran box */
+/* border = tebal style warna */
+/* style = solid dotted dashed double */
+/* border juga merubah ukuran box */
+
+div {
+  width: 600px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.satu {
+  background-color: royalblue;
+  padding: 10px;
+  border: 15px solid red;
+}
+
+.dua {
+  background-color: lightgreen;
+  padding: 30px;
+  border: 10px dashed orange;
+}

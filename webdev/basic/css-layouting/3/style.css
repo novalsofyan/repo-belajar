@@ -1,7 +1,8 @@
 /* margin
-1 nilai = atas bawah kiri kanan
+1 nilai = atas kanan bawah kiri sama
 2 nilai = atas bawah, kiri kanan
-3 nilai = atas, kiri kanan, bawah */
+3 nilai = atas, kiri kanan, bawah 
+4 nilai = atas, kanan, bawah, kiri */
 
 .satu {
   width: 200px;
