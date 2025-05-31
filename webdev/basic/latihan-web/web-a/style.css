@@ -1,0 +1,148 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* style.css */
+
+body {
+  background-color: rgb(197, 197, 197);
+  background-image: url(media/picture/moroccan-flower.png);
+}
+
+.container {
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.nav {
+  text-align: center;
+  padding: 20px;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav ul {
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: orangered;
+}
+
+.nav a:hover {
+  color: darkgreen;
+}
+
+.nav a:visited {
+  color: orangered;
+}
+
+.nav a:visited:hover {
+  color: darkgreen;
+}
+
+.gambar_depan {
+  border-top: 5px solid orangered;
+  border-bottom: 5px solid orangered;
+  height: 280px;
+  background-image: url(media/picture/ilya-pavlov-computer.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.main_artikel {
+  padding: 20px;
+}
+
+.main_artikel .penulis_artikel {
+  font-size: 12px;
+}
+
+.main_artikel .penulis_artikel a {
+  text-decoration: none;
+  color: orangered;
+}
+
+.main_artikel .penulis_artikel a:hover {
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.main_artikel .isi_artikel {
+  margin: 10px 0;
+}
+
+.footer {
+  text-align: center;
+  background-color: orangered;
+  color: white;
+}
