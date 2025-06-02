@@ -129,7 +129,7 @@ table {
 }
 
 /* style */
-/** materi float **/
+/** materi clear **/
 
 .container {
   width: 600px;
@@ -138,9 +138,18 @@ table {
   padding: 5px;
 }
 
-.container img {
-  width: 200px;
-  height: 200px;
+.kotak {
+  width: 80px;
+  height: 80px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  line-height: 80px;
+  font-size: 30px;
+  margin: 2px;
   float: right;
-  margin: 5px;
+}
+
+.clear_float {
+  clear: both;
 }

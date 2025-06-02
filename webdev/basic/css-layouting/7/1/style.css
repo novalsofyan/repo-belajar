@@ -129,7 +129,10 @@ table {
 }
 
 /* style */
-/** materi float **/
+/** materi membersihkan float:
+1. bisa memakai overflow: auto
+2. memakai clear (div kosong)
+3. teknik micro clear fix**/
 
 .container {
   width: 600px;
@@ -143,4 +146,8 @@ table {
   height: 200px;
   float: right;
   margin: 5px;
+}
+
+.clear_float {
+  clear: both;
 }
