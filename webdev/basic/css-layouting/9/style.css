@@ -1,0 +1,35 @@
+/* materi position absolute & fixed*/
+
+body {
+  height: 2000px;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.containter {
+  width: 600px;
+  height: 650px;
+  border: 10px solid green;
+  position: relative;
+}
+
+.satu {
+  background-color: lightgreen;
+}
+
+.dua {
+  background-color: violet;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.tiga {
+  background-color: gold;
+}
