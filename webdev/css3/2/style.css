@@ -1,0 +1,16 @@
+/* materi border radius */
+/* border-radius: atas kiri, atas kanan, bawah kanan, bawah kiri */
+div {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: salmon;
+  border-radius: 0 50% 50% 50%;
+  text-align: center;
+  line-height: 300px;
+  overflow: hidden;
+}
+
+div img {
+  width: 300px;
+}
