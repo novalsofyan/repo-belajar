@@ -7,9 +7,6 @@ div {
   animation: animasiKotak 1s ease 3 alternate running;
 }
 
-div:hover {
-}
-
 @keyframes animasiKotak {
   0% {
     width: 200px;
