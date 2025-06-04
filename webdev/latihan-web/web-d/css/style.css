@@ -1,11 +1,14 @@
 /* style css */
 
+/* import font */
 @font-face {
   font-family: "Poppins-Regular";
   src: local("Poppins-Regular"), url("../font/Poppins-Regular-package/Poppins-Regular.woff2"), url("../font/Poppins-Regular-package/Poppins-Regular.woff"),
     url("f../font/Poppins-Regular-package/Poppins-Regular.ttf");
+  font-display: swap;
 }
 
+/* bikin keyframes buat animasi background  */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -18,9 +21,10 @@
   }
 }
 
+/* ini configurasi element bodynya biar ada gradient animasi gitu */
 body {
   font-family: "Poppins-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(to bottom right, #ee7752, #ff2c9d, #23a6d5, #23d5ab);
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -28,61 +32,88 @@ body {
   animation: gradientAnimation 15s ease infinite;
 }
 
+/* sesuai nama kelasnya, judul website */
 .judul_website {
   font-size: 46px;
   color: white;
   text-align: center;
-  margin: 40px auto;
+  margin: 50px auto;
+  padding: 0 50px;
   font-weight: bolder;
   text-shadow: 0 0 20px rgba(255, 44, 157, 1);
 }
 
+/* ini buat kontainer isi gallerynya */
 .container {
-  margin: 50px auto;
-  backdrop-filter: blur(10px);
-  width: 80%;
-  text-align: center;
-  border-radius: 20px;
-  box-sizing: border-box;
+  margin: 0 auto 50px; /* biar posisi kontainernya di tengah dan kasih margin bawah 50px, atas gaperlu soalnya udah margin di judul */
+  width: 100%; /* lebarnya sesuaiin layar aja */
+  text-align: center; /* biar isi kontennya di tengah (?) idk ini works, seingetku nanti ada justify content deh cuma belum belajar sih (if it works, it works! lmao) */
 }
 
-.gallery a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  box-sizing: border-box;
+.gallery {
+  font-size: 0; /* ini biar gaada jarak atau white space di antara element dengan class gallery*/
 }
 
+/* styling buat element kotak putih untuk setiap gambarnya */
 .gallery li {
-  position: relative;
+  position: relative; /* dibikin relative biar isinya nanti nyesuaiin element li ini */
   width: 270px;
-  height: 270px;
-  margin: 30px;
-  padding: 15px;
-  background-color: white;
-  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.35);
-  display: inline-block;
-  overflow: hidden;
-  box-sizing: border-box;
-  text-align: center; /* agar isi di tengah */
+  height: 270px; /* width dan heightnya kasih 270px */
+  margin: 30px; /* marign 30px biar ada jarak antara element ini */
+  padding: 15px; /* kasih padding biar nanti bagus gambarnya ga mepet banget */
+  background-color: white; /* warna kotak putih */
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.35); /* kasih box shadow yang bagus */
+  display: inline-block; /* kasih inline-block biar menyamping */
+  overflow: hidden; /* ini buat nyembunyiin element yang kelebihan sekaligus captionnya */
+  box-sizing: border-box; /* biar tetep sizenya 270px meskipun ada padding atau margin dll dah */
+  text-align: center; /* biar ketengah element yang ada di dalemnya */
 }
 
+/* ini buat a href biar bisa diklik nantinya */
+.gallery a {
+  position: absolute; /* kasih position biar bisa disesuaiin */
+  top: 0;
+  left: 0; /* top left 0 biar posisinya mentok kiri atas dari element li */
+  width: 100%;
+  height: 100%; /* width height 100% biar lebar panjangnya sesuai element li */
+  text-decoration: none; /* biar gaada underline di textnya */
+}
+
+/* ini styling gambarnya */
 .thumbnail {
+  position: absolute; /* kasih absolute biar sekali lagi ngikutin element li */
+  top: 50%;
+  left: 50%; /* top dan left 50% biar ujung kiri dari gambarnya itu pas di tengah tengah element li */
+  transform: translate(-50%, -50%); /* trus ditranslate atau digeser(?) posisinya ke atas kiri biar element gambar ini pas banget di tengah */
   width: 200px;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  margin: auto;
-  border-radius: 20px;
+  height: 200px; /* width height 200px biar ga menuhin element li */
+  object-fit: cover; /* ini juga biar gambarnya ga overlap atau gepeng gitu dah wkwkw */
+  border-radius: 20px; /* kasih lengkungan */
+  transition: 0.5s; /* biar nanti kalo dihover ada transisinya */
 }
 
+/* ini buat styling hover gambar */
+.gallery a:hover .thumbnail {
+  filter: grayscale(1); /* nah ini kalo dihover ntar bakal jadi abu abu gambarnya */
+}
+
+/* ini buat styling caption */
 .caption {
-  display: block;
-  color: black;
-  margin: 10px;
-  font-size: 18px;
+  position: absolute; /* sekali lagi buat posisinya ngikut element li */
+  top: 50%;
+  left: 50%; /* sama kaya .thumbnail */
+  width: 100%;
+  height: 100%; /* sama kaya .thumbnail */
+  line-height: 250px; /* ini biar tulisannya di tengah kotak (disesuaiin lagi kalo kotak atau element linya berubah, ribet sih wkwk)*/
+  font-size: 24px; /* font size */
+  background-color: rgba(0, 0, 0, 0.5); /* biar kalo dihover nanti kek ada warna hitam transparan gitu */
+  transform: translate(-50%, -50%); /* sama kata .thumbnail */
+  color: white; /* warna fontnya */
+  opacity: 0; /* diilangin dulu, nanti diubah kalo pas dihover */
+  transition: 0.5s; /* sama kaya .thumbnail */
+}
+
+/* ini buat hover stylibg captionnya */
+.gallery a:hover .caption {
+  opacity: 100%; /* munculin textnya */
 }
