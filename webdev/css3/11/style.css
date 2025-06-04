@@ -1,0 +1,20 @@
+/* materi filter */
+
+/* filter: 
+blur (px)
+brightness (angka | persen)
+contrast (angka | persen)
+saturate (angka | persen)
+grayscale (angka | persen)
+sepia (angka | persen)
+hue-rotate (deg)
+invert (angka | persen)
+opacity (angka | persen)
+drop-shadow (sama seperti box shadow) */
+
+body {
+  text-align: center;
+}
+img {
+  filter: blur(10px);
+}

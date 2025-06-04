@@ -1,0 +1,8 @@
+/* materi prefixes */
+body {
+  text-align: center;
+}
+img {
+  -webkit-filter: grayscale();
+  filter: grayscale();
+}

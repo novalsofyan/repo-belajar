@@ -1,0 +1,51 @@
+/* transition: properti, waktu, delay, tipe animasi */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.kotak {
+  width: 100px;
+  height: 100px;
+  background-color: salmon;
+  margin: 5px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.kotak1 {
+  transition: all 1s 2s ease;
+}
+
+.kotak2 {
+  transition: all 1s 1s ease-in;
+}
+
+.kotak3 {
+  transition: all 1s 2s ease-out;
+}
+
+.kotak4 {
+  transition: all 1s ease-in-out;
+}
+
+.kotak5 {
+  transition: all 1s linear;
+}
+
+.kotak6 {
+  transition: all 1s cubic-bezier(0.35, -0.77, 0.57, 1.69);
+}
+
+.container {
+  width: 900px;
+  margin: 10px auto;
+  border: 5px solid black;
+}
+
+.container:hover .kotak {
+  transform: rotate(180deg);
+  margin-left: 800px;
+  background-color: royalblue;
+}
