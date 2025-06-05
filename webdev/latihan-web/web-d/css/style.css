@@ -23,24 +23,24 @@
 
 /* ini configurasi element bodynya biar ada gradient animasi gitu */
 body {
-  font-family: "Poppins-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: linear-gradient(to bottom right, #ee7752, #ff2c9d, #23a6d5, #23d5ab);
-  height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  font-family: "Poppins-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* tipe-fontsnya */
+  background: linear-gradient(to bottom right, #ee7752, #ff2c9d, #23a6d5, #23d5ab); /* warna background linear gradient */
+  height: 100%; /* biar selalu ngepas layar */
+  background-repeat: no-repeat; /* biar ga direpeat backgroundnya */
+  background-attachment: fixed; /* biar background tetap di halaman saat di scroll */
+  background-size: 400% 400%; /* ukurannya biar gede dari layar buat efek animasi gradientnya */
+  animation: gradientAnimation 15s ease infinite; /* ini animasi gradient pake infinite biar jalan terus */
 }
 
 /* sesuai nama kelasnya, judul website */
 .judul_website {
-  font-size: 46px;
-  color: white;
-  text-align: center;
-  margin: 50px auto;
-  padding: 0 50px;
-  font-weight: bolder;
-  text-shadow: 0 0 20px rgba(255, 44, 157, 1);
+  font-size: 46px; /* ukuran font judul */
+  color: white; /* warna font judul */
+  text-align: center; /* biar di tengah */
+  margin: 50px auto; /* margin atas dan bawah 50px, sampingnya auto biar tengah */
+  padding: 0 50px; /* padding kiri kanan 50px */
+  font-weight: bolder; /* tebal fontnya */
+  text-shadow: 0 0 20px rgba(255, 44, 157, 1); /* efek glow warna */
 }
 
 /* ini buat kontainer isi gallerynya */
@@ -61,7 +61,7 @@ body {
   height: 270px; /* width dan heightnya kasih 270px */
   margin: 30px; /* marign 30px biar ada jarak antara element ini */
   padding: 15px; /* kasih padding biar nanti bagus gambarnya ga mepet banget */
-  background-color: white; /* warna kotak putih */
+  background: white; /* warna kotak putih */
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.35); /* kasih box shadow yang bagus */
   display: inline-block; /* kasih inline-block biar menyamping */
   overflow: hidden; /* ini buat nyembunyiin element yang kelebihan sekaligus captionnya */
@@ -70,7 +70,7 @@ body {
 }
 
 /* ini buat a href biar bisa diklik nantinya */
-.gallery a {
+.gallery .a-thumbnail {
   position: absolute; /* kasih position biar bisa disesuaiin */
   top: 0;
   left: 0; /* top left 0 biar posisinya mentok kiri atas dari element li */
@@ -93,7 +93,7 @@ body {
 }
 
 /* ini buat styling hover gambar */
-.gallery a:hover .thumbnail {
+.gallery .a-thumbnail:hover .thumbnail {
   filter: grayscale(1); /* nah ini kalo dihover ntar bakal jadi abu abu gambarnya */
 }
 
@@ -106,7 +106,7 @@ body {
   height: 100%; /* sama kaya .thumbnail */
   line-height: 250px; /* ini biar tulisannya di tengah kotak (disesuaiin lagi kalo kotak atau element linya berubah, ribet sih wkwk)*/
   font-size: 24px; /* font size */
-  background-color: rgba(0, 0, 0, 0.5); /* biar kalo dihover nanti kek ada warna hitam transparan gitu */
+  background: rgba(0, 0, 0, 0.5); /* biar kalo dihover nanti kek ada warna hitam transparan gitu */
   transform: translate(-50%, -50%); /* sama kata .thumbnail */
   color: white; /* warna fontnya */
   opacity: 0; /* diilangin dulu, nanti diubah kalo pas dihover */
@@ -114,6 +114,96 @@ body {
 }
 
 /* ini buat hover stylibg captionnya */
-.gallery a:hover .caption {
+.gallery .a-thumbnail:hover .caption {
   opacity: 100%; /* munculin textnya */
+}
+
+/* overlay */
+.overlay {
+  position: fixed; /* tetep di posisi meskipun di scroll */
+  overflow: hidden; /* sembunyiin dulu kontennya */
+  top: 0;
+  left: 0; /* top left 0 biar ngepas layar dikombinasiin bottom right di .overlay:target*/
+  background: rgba(0, 0, 0, 0); /* awal bikin transparan */
+  z-index: 9; /* biar ada di atas element lain */
+  transition: 0.5s ease; /* transisi nanti buat animasi */
+}
+
+/* style ketika elementnya di target idnya */
+.overlay:target {
+  width: auto;
+  height: auto; /* width height auto biar ngepas layar */
+  bottom: 0;
+  right: 0; /* bottom right 0 biar ngepas layar dikombinasiin sama top left yang ada di .overlay */
+  background: rgba(0, 0, 0, 0.8); /* latar belakang biar gelap agak transparan */
+  box-sizing: border-box; /* you know lah */
+}
+
+/* styling gambar di overlay */
+.overlay img {
+  position: absolute; /* biar dimensi relative .overlay */
+  max-height: 70%; /* batas tinggi gambar (biar ga mepet kalo di hp maupun desktop layar kecil) */
+  max-width: 90%; /* sama kaya max-height */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* biar gambar di tengah dikombinasiin sama top left 50% */
+  box-shadow: 0 0 20px rgba(255, 44, 157, 1); /* kasih efek glow */
+}
+
+/* efek zoom */
+@keyframes fadeZoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* kalo overlay di target kasih animasi zoom do gambarnya */
+.overlay:target img {
+  animation: fadeZoom 1s;
+}
+
+.overlay .tombol-close {
+  position: absolute; /* biar posisinya ngikut dimensi .overlay */
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%); /* biar tengah bawah dikombinasiin left 50% bottom 7% */
+  z-index: 10; /* biar di atas overlay ((gambar) */
+  background: #ff2c9d; /* warna tombolnya pink */
+  color: #fff; /* text warna putih */
+  padding: 10px 18px; /* kasih padding atas bawah 10px kiri kanan 18px */
+  border-radius: 8px; /* rounded */
+  text-decoration: none; /* biar tulisannya gaada garisnya */
+  font-weight: bold; /* tebelin tulisan */
+  font-size: 18px; /* font size tombolnya */
+  box-shadow: 0 0 20px rgba(255, 44, 157, 0.5); /* glow tombol */
+}
+
+/* kalo dihover biar berubah warna backgroundnya */
+.overlay .tombol-close:hover {
+  background: #ee7752;
+}
+
+/* ini animasi buat tombol close atau tutup */
+@keyframes fadeClose {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* kasih animasi tutup */
+.overlay:target .tombol-close {
+  animation: fadeClose 1s;
 }
