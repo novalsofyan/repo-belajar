@@ -1,0 +1,27 @@
+.container {
+  width: 600px;
+  height: 600px;
+  border: 5px solid black;
+  margin: 30px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* biar isi nya ga maksa menuhin container */
+  justify-content: center; /* biar itemnya rata tengah secara main axis */
+  align-items: center; /* penjajaran item terhadap cross axis */
+  align-content: center; /* biar itemnya rata tengah secara cross axis minim 2 baris */
+}
+
+/* ada
+1. order untuk mengatur urutan
+2. flex-grow / flex
+*/
+.container div {
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  margin: 2px;
+}
