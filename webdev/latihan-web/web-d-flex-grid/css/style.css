@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url(../font/Poppins-Regular-package/Poppins-Regular.woff2);
+  font-display: swap;
+}
+
+@keyframes gradientAnimationBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+html {
+  font-size: 12px;
+  font-family: "Poppins-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #ee7752, #ff2c9d, #23a6d5, #23d5ab);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientAnimationBG 15s ease infinite;
+}
+
+.judul_website {
+  color: white;
+  text-align: center;
+  margin: 40px auto;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px rgba(255, 44, 157, 1);
+  padding: 0 30px;
+}
+
+.galeri {
+  display: grid;
+  grid-template-areas: "card";
+  grid-template-columns: 1fr;
+  margin: 0px auto 40px;
+  justify-items: center;
+  list-style-type: none;
+  gap: 30px;
+  box-sizing: border-box;
+  padding: 5vh;
+}
+
+.card-galeri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 270px;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.35);
+}
+
+.a-thumbnail {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.a-thumbnail:hover {
+  filter: grayscale(1);
+}
+
+.caption {
+  position: absolute;
+  text-align: center;
+  line-height: 270px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.caption:hover {
+  opacity: 1;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9;
+  transition: 0.5s ease;
+}
+
+.overlay:target {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.overlay img {
+  position: absolute;
+  max-height: 70%;
+  max-width: 90vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255, 44, 157, 1);
+}
+
+@keyframes zoomImgOverlay {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.overlay:target img {
+  animation: zoomImgOverlay 1s;
+}
+
+.tutup-overlay {
+  position: absolute;
+  font-size: 0.5rem;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+  color: white;
+  text-decoration: none;
+  background-color: #ff2c9d;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.tutup-overlay:hover {
+  background-color: #ee7752;
+}
+
+.overlay:target .tutup-overlay {
+  animation: animationTutupOverlay 1.2s;
+}
+
+@keyframes animationTutupOverlay {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* responsive */
+
+@media (min-height: 367px) {
+  .tutup-overlay {
+    font-size: 1rem;
+    left: 50%;
+    bottom: 5vh;
+    padding: 10px;
+  }
+}
+
+@media (min-height: 685px) {
+  .tutup-overlay {
+    font-size: 1rem;
+    bottom: 10vh;
+    padding: 10px;
+  }
+}
+
+@media (min-height: 827px) {
+  .tutup-overlay {
+    font-size: 1.5rem;
+    bottom: 11vh;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 527px) {
+  .tutup-overlay {
+    bottom: 8vh;
+  }
+}
+
+@media (min-width: 810px) {
+  .judul_website {
+    font-size: 3.5rem;
+  }
+  .galeri {
+    grid-template-areas: none;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    max-width: 1700px;
+  }
+}

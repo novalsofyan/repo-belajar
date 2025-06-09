@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Poppins-Regular';
+  font-display: swap;
+  src: local('Poppins-Regular'),
+       url('Poppins-Regular.ttf') format('truetype'),
+       url('Poppins-Regular.woff') format('woff'),
+       url('Poppins-Regular.woff2') format('woff2');
+  /* Fallback font stack */
+  /* font-family: 'Poppins-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif; */
+}
