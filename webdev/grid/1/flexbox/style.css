@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+  border: 5px solid black;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.content {
+  display: flex;
+}
+
+header {
+  background-color: purple;
+  padding: 40px 0;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.sidebar aside {
+  background-color: blue;
+  padding: 60px 0;
+}
+
+.sidebar nav {
+  background-color: orange;
+  padding: 100px 0;
+}
+
+main {
+  background-color: green;
+  padding: 171.5px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+footer {
+  background-color: gray;
+  padding: 20px;
+}

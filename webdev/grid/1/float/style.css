@@ -1,0 +1,56 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+  border: 5px solid black;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+header {
+  background-color: purple;
+  padding: 40px 0;
+}
+
+.content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.sidebar {
+  float: left;
+  width: 40%;
+}
+
+.sidebar aside {
+  background-color: blue;
+  padding: 60px 0;
+}
+
+.sidebar nav {
+  background-color: orange;
+  padding: 100px 0;
+}
+
+main {
+  background-color: green;
+  padding: 171.5px;
+  width: 60%;
+  float: right;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: gray;
+  padding: 20px;
+}
