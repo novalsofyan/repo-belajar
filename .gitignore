@@ -1,1 +1,2 @@
-# tidak ada file yang di abaikan
+# abaikan file cache vscode
+.vscode/
