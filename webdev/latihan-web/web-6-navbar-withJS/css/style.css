@@ -20,7 +20,7 @@ body {
 nav {
   display: flex;
   position: fixed;
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 1.5rem + 0.5vw, 2.4rem);
   justify-content: space-between;
   align-items: center;
   width: 100dvw;
@@ -43,6 +43,7 @@ nav {
 }
 
 nav .logo {
+  font-size: clamp(2.8rem, 2rem + 2vw, 4.6rem);
   font-weight: bolder;
   margin: 0 0 0 50px;
 }
@@ -54,9 +55,12 @@ nav .navMenu {
 nav .navMenu .navMenuContainer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 nav .navMenu .navMenuContainer .navMenuList {
+  font-size: clamp(1.8rem, 1.4rem + 1vw, 2.8rem);
   list-style: none;
 }
 
@@ -72,23 +76,105 @@ nav .navMenu .navMenuContainer .navMenuList:last-child {
 nav .navMenu .navMenuContainer .navMenuList .navMenuItem {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
 }
 
 nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
   color: orange;
 }
 
+nav .navMenu .navMenuContainer .navMenuList .navMenuItem.DLMode {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  width: 4rem;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Main container */
+main {
+  display: flex;
+  justify-content: center;
+  color: whitesmoke;
+  padding: 85px 1rem 1rem 1rem;
+  font-size: clamp(1.6rem, 1rem + 1vw, 2.2rem);
+}
+
+main .container {
+  width: 1200px;
+  padding: 0 3.5rem 3.5rem 3.5rem;
+  text-align: justify;
+}
+
+main .container a {
+  text-decoration: none;
+  color: rgb(0, 191, 255);
+}
+
+main .container a:hover {
+  text-decoration: none;
+  color: orange;
+}
+
+/* Light mode toggle */
+body.lightMode {
+  background-color: white;
+  color: black;
+}
+
+body.lightMode nav {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.lightMode nav .hamburger span {
+  background-color: black;
+}
+
+body.lightMode nav .navMenu {
+  background-color: white;
+}
+
+body.lightMode nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
+  color: red;
+}
+
+body.lightMode nav .navMenu .navMenuContainer .navMenuList .navMenuItem.DLMode {
+  background: black;
+  color: white;
+}
+
+body.lightMode main .container {
+  color: black;
+}
+
+body.lightMode main .container a:hover {
+  text-decoration: none;
+  color: red;
+}
+
 /* Responsive */
 
-@media (max-width: 768px) {
+@media (max-width: 846px) {
   /* Navbar styling */
   nav {
     justify-content: end;
   }
 
   nav .logo {
-    font-size: 2.4rem;
     margin-right: 20px;
   }
 
@@ -124,7 +210,6 @@ nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
 
   nav .navMenu {
     position: absolute;
-    font-size: 1.8rem;
     top: 80px;
     left: -245px;
     background-color: black;
@@ -139,11 +224,11 @@ nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
   }
 
   nav .navMenu .navMenuContainer li.navMenuList:first-child {
-    margin: 20px 0px 10px 20px;
+    margin: 20px 0px 0px 20px;
   }
 
   nav .navMenu .navMenuContainer li.navMenuList:not(:first-child) {
-    margin: 10px 0px 10px 20px;
+    margin: 10px 0px 0px 20px;
   }
 
   nav .navMenu.active {
@@ -163,5 +248,11 @@ nav .navMenu .navMenuContainer .navMenuList .navMenuItem:hover {
   nav .hamburger.active span:nth-child(3) {
     top: 50%;
     transform: rotate(-45deg);
+  }
+
+  /* Main styling */
+
+  main .container {
+    padding: 0 1rem 1rem 1rem;
   }
 }
