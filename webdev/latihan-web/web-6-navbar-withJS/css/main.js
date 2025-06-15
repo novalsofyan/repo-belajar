@@ -25,7 +25,7 @@ DLMode.addEventListener("click", () => {
   const isLight = document.body.classList.contains("lightMode");
 
   // Ganti teks tombol
-  DLMode.textContent = isLight ? "⏾" : "☀";
+  DLMode.textContent = isLight ? "🌙" : "☀️";
 
   // Simpan status  ke localStorage
   localStorage.setItem("theme", isLight ? "light" : "dark");
@@ -35,7 +35,7 @@ DLMode.addEventListener("click", () => {
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "light") {
   document.body.classList.add("lightMode");
-  DLMode.textContent = "⏾";
+  DLMode.textContent = "🌙";
 } else {
-  DLMode.textContent = "☀";
+  DLMode.textContent = "☀️";
 }
