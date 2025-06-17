@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Blog</title>
+  </head>
+  <body>
+    <h1>Buat Post Baru</h1>
+
+    <form id="postForm">
+      <label>
+        Judul:
+        <input type="text" id="title" required /> </label
+      ><br /><br />
+
+      <label>
+        Isi:
+        <textarea id="body" required></textarea></label
+      ><br /><br />
+
+      <label>
+        User ID:
+        <input type="number" id="userId" required /> </label
+      ><br /><br />
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <h2>Respons dari API:</h2>
+    <pre id="responseBox">(Belum ada respons)</pre>
+
+    <script src="app.js"></script>
+  </body>
+</html>
