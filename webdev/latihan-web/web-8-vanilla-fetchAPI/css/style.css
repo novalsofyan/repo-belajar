@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "poppins";
+  src: url(../font/poppins.woff2);
+  font-display: swap;
+}
+
+/* desktop */
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: whitesmoke;
+}
+
+/* navbar style */
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: clamp(1.6rem, 2dvw, 2rem);
+  background-color: white;
+  height: 60px;
+  width: 100dvw;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.navbar .navbarContainer {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 60dvw;
+}
+
+.navbar .navbarContainer .hamburger {
+  position: relative;
+  display: none;
+  left: 0;
+  width: 25px;
+  height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.navbar .navbarContainer .hamburger span {
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 20px;
+  border-radius: 3px;
+  transition: 0.5s ease;
+  box-sizing: border-box;
+}
+
+.navbar .navbarContainer .hamburger span:nth-child(1) {
+  transform: translate(0%, 0%);
+}
+
+.navbar .navbarContainer .hamburger span:nth-child(2) {
+  transform: translate(0%, 250%);
+}
+
+.navbar .navbarContainer .hamburger span:nth-child(3) {
+  transform: translate(0%, 500%);
+}
+
+.navbar .navbarContainer .menuContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .navbarContainer .menuContainer .itemList {
+  list-style: none;
+}
+
+.navbar .navbarContainer .menuContainer .itemList:not(:last-child) {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbar .navbarContainer .menuContainer .itemList:last-child {
+  margin-left: 5px;
+}
+
+.navbar .navbarContainer .menuContainer .itemList .menuItem {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .navbarContainer .menuContainer .itemList .menuItem:hover {
+  color: red;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar .navbarContainer .menuContainer .itemList .darkLightToggle {
+  text-decoration: none;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.navbar .navbarContainer .menuContainer .itemList .darkLightToggle .darkLightToggleText {
+  display: inline-block;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar .navbarContainer .menuContainer .itemList .darkLightToggle:hover .darkLightToggleText {
+  transform: rotateY(180deg);
+}
+
+/* main style */
+.contentContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 226px));
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 80px;
+  font-size: clamp(1.6rem, 2dvw, 2rem);
+  width: 60dvw;
+  margin: auto;
+}
+
+.contentContainer .searchForm {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentContainer .searchForm .inputSearch {
+  border: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  width: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
+.contentContainer .searchForm .inputSearch:focus {
+  outline: none;
+}
+
+.contentContainer .searchForm .searchButton {
+  width: auto;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  padding: 3px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.contentContainer .card {
+  display: block;
+  font-size: clamp(1.4rem, 2dvw, 1.6rem);
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.contentContainer .card .cardImg {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.contentContainer .judulCard {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contentContainer .tahunCard {
+  margin-bottom: 10px;
+}
+
+.contentContainer .lihatDetailCard {
+  padding: 5px 10px;
+
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .navbar .navbarContainer {
+    width: 90dvw;
+  }
+
+  .navbar .navbarContainer .logoNavbar {
+    font-size: 0;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .navbar .navbarContainer .logoNavbar::before {
+    content: "NOSORA MDB";
+    font-size: 2.4rem;
+    display: inline-block;
+    color: black;
+  }
+
+  .navbar .navbarContainer .hamburger {
+    display: block;
+    order: 1;
+  }
+
+  .navbar .navbarContainer .menuContainer {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 5dvw;
+    top: 48px;
+    left: -110dvw;
+    width: 80dvw;
+    height: 100dvh;
+    background-color: white;
+    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease-in-out;
+  }
+
+  .navbar .navbarContainer .menuContainer .itemList {
+    margin: 0px;
+  }
+
+  .navbar .navbarContainer .menuContainer .itemList:first-child {
+    margin: 20px 0px 10px 0px;
+  }
+
+  .navbar .navbarContainer .menuContainer .itemList:not(:first-child) {
+    margin: 10px 0px;
+  }
+
+  .navbar .navbarContainer .menuContainer.toggleMenuNavbar {
+    left: -5dvw;
+  }
+
+  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(1) {
+    transform: translate(0%, 250%) rotate(225deg);
+  }
+
+  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(2) {
+    transform: translate(0%, 250%);
+    opacity: 0;
+  }
+
+  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(3) {
+    transform: translate(0%, 250%) rotate(-225deg);
+  }
+
+  .contentContainer {
+    width: 90dvw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .navbar .navbarContainer {
+    width: 80dvw;
+  }
+
+  .contentContainer {
+    width: 80dvw;
+  }
+}
