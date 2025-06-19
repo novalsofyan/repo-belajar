@@ -245,6 +245,10 @@ body {
   height: 100dvh;
 }
 
+.detailMovieContainer.toggleDetailMovie {
+  display: flex;
+}
+
 /* .detailMovieContainer => .detailMovieCard */
 .detailMovieCard {
   display: grid;

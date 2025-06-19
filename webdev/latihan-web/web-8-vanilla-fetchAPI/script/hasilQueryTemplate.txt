@@ -1,0 +1,39 @@
+{Search: Array(10), totalResults: '609', Response: 'True'}
+Response: "True"
+Search: Array(10)
+0: 
+    Poster: "https://m.media-amazon.com/images/M/MV5BODIyMDdhNTgtNDlmOC00MjUxLWE2NDItODA5MTdkNzY3ZTdhXkEyXkFqcGc@._V1_SX300.jpg"
+    Title: "Batman Begins"
+    Type: "movie"
+    Year: "2005"
+    imdbID: "tt0372784"
+
+
+Ini detailnya
+{Title: 'Avengers: Endgame', Year: '2019', Rated: 'PG-13', Released: '26 Apr 2019', Runtime: '181 min', …}
+    Actors: "Robert Downey Jr., Chris Evans, Mark Ruffalo"
+    Awards: "Nominated for 1 Oscar. 70 wins & 133 nominations total"
+    BoxOffice: "$858,373,000"
+    Country: "United States"
+    DVD: "N/A"
+    Director: "Anthony Russo, Joe Russo"
+    Genre: "Action, Adventure, Sci-Fi"
+    Language: "English, Japanese, Xhosa, German"
+    Metascore: "78"
+    Plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+    Poster: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+    Production: "N/A"
+    Rated: "PG-13"
+    Ratings: (3) [{…}, {…}, {…}]
+    Released: "26 Apr 2019"
+    Response: "True"
+    Runtime: "181 min"
+    Title: "Avengers: Endgame"
+    Type: "movie"
+    Website: "N/A"
+    Writer: "Christopher Markus, Stephen McFeely, Stan Lee"
+    Year: "2019"
+    imdbID: "tt4154796"
+    imdbRating: "8.4"
+    imdbVotes: "1,364,269"
+[[Prototype]]: Object
