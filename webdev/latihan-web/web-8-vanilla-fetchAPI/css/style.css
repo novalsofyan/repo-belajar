@@ -31,7 +31,8 @@ body {
   box-sizing: border-box;
 }
 
-.navbar .navbarContainer {
+/* .navbar => .navbarContainer */
+.navbarContainer {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -39,7 +40,8 @@ body {
   width: 60dvw;
 }
 
-.navbar .navbarContainer .hamburger {
+/* .navbar => .hamburger */
+.hamburger {
   position: relative;
   display: none;
   left: 0;
@@ -50,7 +52,7 @@ body {
   box-sizing: border-box;
 }
 
-.navbar .navbarContainer .hamburger span {
+.hamburger span {
   position: absolute;
   background-color: black;
   height: 3px;
@@ -60,49 +62,53 @@ body {
   box-sizing: border-box;
 }
 
-.navbar .navbarContainer .hamburger span:nth-child(1) {
+.hamburger span:nth-child(1) {
   transform: translate(0%, 0%);
 }
 
-.navbar .navbarContainer .hamburger span:nth-child(2) {
+.hamburger span:nth-child(2) {
   transform: translate(0%, 250%);
 }
 
-.navbar .navbarContainer .hamburger span:nth-child(3) {
+.hamburger span:nth-child(3) {
   transform: translate(0%, 500%);
 }
 
-.navbar .navbarContainer .menuContainer {
+/* .navbar => .navbarMenu */
+.navbarMenu {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.navbar .navbarContainer .menuContainer .itemList {
+/* .navbar => .navbarMenu => .itemListNavbar */
+.itemListNavbar {
   list-style: none;
 }
 
-.navbar .navbarContainer .menuContainer .itemList:not(:last-child) {
+.itemListNavbar:not(:last-child) {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.navbar .navbarContainer .menuContainer .itemList:last-child {
+.itemListNavbar:last-child {
   margin-left: 5px;
 }
 
-.navbar .navbarContainer .menuContainer .itemList .menuItem {
+/* .navbar => .navbarMenu => .itemListNavbar => .menuItem */
+.menuItem {
   text-decoration: none;
   color: black;
-}
-
-.navbar .navbarContainer .menuContainer .itemList .menuItem:hover {
-  color: red;
   transition: 0.3s ease-in-out;
 }
 
-.navbar .navbarContainer .menuContainer .itemList .darkLightToggle {
+.menuItem:hover {
+  color: red;
+}
+
+/* .navbar => .navbarMenu => .itemListNavbar => .darkLightoggle */
+.darkLightToggle {
   text-decoration: none;
   background-color: black;
   border: none;
@@ -112,13 +118,27 @@ body {
   cursor: pointer;
 }
 
-.navbar .navbarContainer .menuContainer .itemList .darkLightToggle .darkLightToggleText {
+.darkLightToggleText {
   display: inline-block;
-  transition: 0.5s ease-in-out;
 }
 
-.navbar .navbarContainer .menuContainer .itemList .darkLightToggle:hover .darkLightToggleText {
-  transform: rotateY(180deg);
+@keyframes putarIcon {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    scale: 1.3;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1;
+  }
+}
+
+.darkLightToggleText.animasiIkon {
+  animation: putarIcon 0.5s ease;
 }
 
 /* main style */
@@ -134,14 +154,16 @@ body {
   margin: auto;
 }
 
-.contentContainer .searchForm {
+/* .contentContainer => .searchForm */
+.searchForm {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contentContainer .searchForm .inputSearch {
+/* .contentContainer => .searchForm => .inputSearch */
+.inputSearch {
   border: none;
   border-radius: 5px;
   padding: 3px 10px;
@@ -150,11 +172,12 @@ body {
   margin-right: 10px;
 }
 
-.contentContainer .searchForm .inputSearch:focus {
+.inputSearch:focus {
   outline: none;
 }
 
-.contentContainer .searchForm .searchButton {
+/* .contentContainer => .searchForm => .searchButton */
+.searchButton {
   width: auto;
   border: none;
   cursor: pointer;
@@ -166,7 +189,10 @@ body {
   box-sizing: border-box;
 }
 
-.contentContainer .card {
+/* card */
+
+/* .contentContainer => .card */
+.movieCard {
   display: block;
   font-size: clamp(1.4rem, 2dvw, 1.6rem);
   text-align: center;
@@ -177,26 +203,29 @@ body {
   box-sizing: border-box;
 }
 
-.contentContainer .card .cardImg {
+/* .contentContainer => .card => .cardImg */
+.cardImg {
   margin-bottom: 10px;
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-.contentContainer .judulCard {
+/* .contentContainer => .card => .judulCard */
+.judulCard {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.contentContainer .tahunCard {
+/* .contentContainer => .card => .tahunCard */
+.tahunCard {
   margin-bottom: 10px;
 }
 
-.contentContainer .lihatDetailCard {
-  padding: 5px 10px;
-
+/* .contentContainer => .card => .lihatDetailCard */
+.lihatDetailCard {
+  padding: 3px 7px;
   border: none;
   background-color: black;
   color: white;
@@ -204,32 +233,171 @@ body {
   cursor: pointer;
 }
 
+/* detail movie */
+
+.detailMovieContainer {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+/* .detailMovieContainer => .detailMovieCard */
+.detailMovieCard {
+  display: grid;
+  grid-template-columns: 20% auto;
+  position: absolute;
+  width: clamp(230px, 80dvw, 720px);
+  font-size: clamp(1rem, 2dvw, 1.8rem);
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: clamp(5px, 2dvw, 20px);
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+/* .detailMovieContainer => .detailMovieCard => .imgDMContainer */
+.imgDMContainer {
+  justify-self: center;
+}
+
+/* .detailMovieContainer => .detailMovieCard => .imgDMContainer => .imgDetail */
+.imgDetail {
+  object-fit: cover;
+}
+
+/* .detailMovieContainer => .detailMovieCard => .detailDesc*/
+.detailDesc {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-right: clamp(5px, 2dvw, 10px);
+  padding-bottom: clamp(5px, 2dvw, 10px);
+  padding-left: clamp(5px, 2dvw, 10px);
+  gap: 0.3rem;
+}
+
+/* .detailMovieContainer => .detailMovieCard => .detailDesc => .detailDescItem */
+.detailDescItem {
+  text-align: justify;
+  list-style: none;
+}
+
+/* .detailMovieContainer => .detailMovieCard => .detailDesc => .closeDetailMovie */
+
+.closeDetailMovie {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 30%;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  margin-top: clamp(5px, 2dvw, 20px);
+  padding: 3px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+/* dark mode */
+
+body.darkMode {
+  color: whitesmoke;
+  background-color: #111823;
+}
+
+body.darkMode .navbar {
+  color: whitesmoke;
+  background-color: black;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+body.darkMode .hamburger span {
+  background-color: whitesmoke;
+}
+
+body.darkMode .menuItem {
+  color: whitesmoke;
+}
+
+body.darkMode .darkLightToggle {
+  background-color: whitesmoke;
+}
+
+body.darkMode .darkLightToggleText {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.darkMode .inputSearch {
+  color: whitesmoke;
+  background-color: black;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+}
+
+body.darkMode .searchButton {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+}
+
+body.darkMode .menuItem:hover {
+  color: orange;
+}
+
+body.darkMode .movieCard {
+  background-color: black;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+body.darkMode .lihatDetailCard {
+  background-color: whitesmoke;
+  color: black;
+}
+
+body.darkMode .detailMovieCard {
+  background-color: #111823;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+body.darkMode .lihatDetailCard {
+  background-color: whitesmoke;
+  color: black;
+}
+
+body.darkMode .closeDetailMovie {
+  background-color: whitesmoke;
+  color: black;
+}
+
 /* responsive */
 
 @media (max-width: 768px) {
-  .navbar .navbarContainer {
+  .navbarContainer {
     width: 90dvw;
   }
 
-  .navbar .navbarContainer .logoNavbar {
+  .logoNavbar {
     font-size: 0;
     margin-left: auto;
     order: 2;
   }
 
-  .navbar .navbarContainer .logoNavbar::before {
+  .logoNavbar::before {
     content: "NOSORA MDB";
     font-size: 2.4rem;
     display: inline-block;
     color: black;
   }
 
-  .navbar .navbarContainer .hamburger {
+  .hamburger {
     display: block;
     order: 1;
   }
 
-  .navbar .navbarContainer .menuContainer {
+  .navbarMenu {
     position: absolute;
     flex-direction: column;
     justify-content: flex-start;
@@ -241,45 +409,56 @@ body {
     height: 100dvh;
     background-color: white;
     box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.2);
-    transition: 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out;
   }
 
-  .navbar .navbarContainer .menuContainer .itemList {
+  .itemListNavbar {
     margin: 0px;
   }
 
-  .navbar .navbarContainer .menuContainer .itemList:first-child {
+  .itemListNavbar:first-child {
     margin: 20px 0px 10px 0px;
   }
 
-  .navbar .navbarContainer .menuContainer .itemList:not(:first-child) {
+  .itemListNavbar:not(:first-child) {
     margin: 10px 0px;
   }
 
-  .navbar .navbarContainer .menuContainer.toggleMenuNavbar {
+  .navbarMenu.toggleMenuNavbar {
     left: -5dvw;
   }
 
-  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(1) {
+  .hamburger.toggleMenuNavbar span:nth-child(1) {
     transform: translate(0%, 250%) rotate(225deg);
   }
 
-  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(2) {
+  .hamburger.toggleMenuNavbar span:nth-child(2) {
     transform: translate(0%, 250%);
     opacity: 0;
   }
 
-  .navbar .navbarContainer .hamburger.toggleMenuNavbar span:nth-child(3) {
+  .hamburger.toggleMenuNavbar span:nth-child(3) {
     transform: translate(0%, 250%) rotate(-225deg);
   }
 
   .contentContainer {
     width: 90dvw;
   }
+
+  /* dark mode */
+  body.darkMode .navbarMenu {
+    color: whitesmoke;
+    background-color: #111823;
+    box-shadow: inset 0 10px 10px -10px rgba(255, 255, 255, 0.2);
+  }
+
+  body.darkMode .logoNavbar::before {
+    color: whitesmoke;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1199px) {
-  .navbar .navbarContainer {
+  .navbarContainer {
     width: 80dvw;
   }
 
