@@ -13,6 +13,7 @@
 body {
   font-family: "poppins", sans-serif;
   background-color: whitesmoke;
+  transition: background-color 0.3s ease;
 }
 
 /* navbar style */
@@ -29,6 +30,8 @@ body {
   width: 100dvw;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  transition: 0.3s ease;
+  user-select: none;
 }
 
 /* .navbar => .navbarContainer */
@@ -100,7 +103,7 @@ body {
 .menuItem {
   text-decoration: none;
   color: black;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .menuItem:hover {
@@ -170,6 +173,7 @@ body {
   width: 100%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .inputSearch:focus {
@@ -187,9 +191,21 @@ body {
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  user-select: none;
 }
 
 /* card */
+
+@keyframes fadeInMovieCard {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* .contentContainer => .card */
 .movieCard {
@@ -201,6 +217,7 @@ body {
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  animation: fadeInMovieCard 0.4s ease-in-out;
 }
 
 /* .contentContainer => .card => .cardImg */
@@ -228,9 +245,15 @@ body {
   padding: 3px 7px;
   border: none;
   background-color: black;
-  color: white;
+  color: whitesmoke;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.lihatDetailCard:hover {
+  background-color: red;
 }
 
 /* detail movie */
@@ -243,10 +266,22 @@ body {
   left: 0;
   width: 100dvw;
   height: 100dvh;
+  overflow-y: auto;
 }
 
 .detailMovieContainer.toggleDetailMovie {
   display: flex;
+}
+
+@keyframes fadeInDetailMovieCard {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* .detailMovieContainer => .detailMovieCard */
@@ -254,8 +289,8 @@ body {
   display: grid;
   grid-template-columns: 20% auto;
   position: absolute;
-  width: clamp(230px, 80dvw, 720px);
-  font-size: clamp(1rem, 2dvw, 1.8rem);
+  width: clamp(230px, 90dvw, 720px);
+  font-size: clamp(1.4rem, 2dvw, 1.8rem);
   background-color: white;
   top: 50%;
   left: 50%;
@@ -263,6 +298,14 @@ body {
   padding: clamp(5px, 2dvw, 20px);
   box-sizing: border-box;
   z-index: 99;
+  animation: fadeInDetailMovieCard 0.4s ease-in-out;
+}
+
+.detailMovieCard.loading {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .detailMovieContainer => .detailMovieCard => .imgDMContainer */
@@ -299,13 +342,53 @@ body {
   width: 30%;
   border: none;
   cursor: pointer;
-  color: white;
+  color: whitesmoke;
   background-color: black;
   margin-top: clamp(5px, 2dvw, 20px);
   padding: 3px 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+.closeDetailMovie:hover {
+  background-color: red;
+}
+
+/* pagination */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  user-select: none;
+}
+
+.paginationItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.6rem, 2dvw, 2.4rem);
+  width: clamp(0.5rem, 1dvw, 1rem);
+  height: clamp(0.5rem, 1dvw, 1rem);
+  padding: clamp(1.3rem, 2dvw, 2rem);
+  color: whitesmoke;
+  background-color: black;
+  text-decoration: none;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.paginationItem:hover {
+  background-color: red;
+}
+
+.paginationItem.active {
+  color: whitesmoke;
+  background-color: red;
 }
 
 /* dark mode */
@@ -348,7 +431,7 @@ body.darkMode .searchButton {
 }
 
 body.darkMode .menuItem:hover {
-  color: orange;
+  color: yellowgreen;
 }
 
 body.darkMode .movieCard {
@@ -374,6 +457,28 @@ body.darkMode .lihatDetailCard {
 body.darkMode .closeDetailMovie {
   background-color: whitesmoke;
   color: black;
+}
+
+body.darkMode .paginationItem {
+  color: #111823;
+  background-color: whitesmoke;
+}
+
+body.darkMode .paginationItem.active {
+  color: black;
+  background-color: yellowgreen;
+}
+
+body.darkMode .paginationItem:hover {
+  background-color: yellowgreen;
+}
+
+body.darkMode .lihatDetailCard:hover {
+  background-color: yellowgreen;
+}
+
+body.darkMode .closeDetailMovie:hover {
+  background-color: yellowgreen;
 }
 
 /* responsive */
@@ -413,7 +518,7 @@ body.darkMode .closeDetailMovie {
     height: 100dvh;
     background-color: white;
     box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.2);
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease;
   }
 
   .itemListNavbar {
