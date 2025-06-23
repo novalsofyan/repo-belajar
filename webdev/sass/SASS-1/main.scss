@@ -1,0 +1,13 @@
+$myFontColor: salmon;
+$myBackgroundColor: green;
+
+header {
+  background-color: $myBackgroundColor;
+  h1 {
+    font-size: clamp(1rem, 2dvw, 3rem);
+  }
+
+  p {
+    color: $myFontColor;
+  }
+}

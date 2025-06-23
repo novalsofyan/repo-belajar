@@ -1,0 +1,9 @@
+header {
+  background-color: green;
+}
+header h1 {
+  font-size: clamp(1rem, 2dvw, 3rem);
+}
+header p {
+  color: salmon;
+}/*# sourceMappingURL=main.css.map */
